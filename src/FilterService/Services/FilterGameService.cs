@@ -44,6 +44,7 @@ public class FilterGameService : IFilterGameService
         {
             listQuery.Add(q=>q.MatchAll());
         }
+        //git commit try
         return await CalculateResultSet(listQuery);
     }
 
