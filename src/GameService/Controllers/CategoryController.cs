@@ -1,5 +1,6 @@
 using GameService.DTOs;
 using GameService.Repositories.ForCategory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameService.Controllers;
@@ -36,6 +37,7 @@ public class CategoryController : ControllerBase
 
     }
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult> GetAllCategory(){
         var response= await _categoryRepository.GetAllCategories();
         return Ok(response);

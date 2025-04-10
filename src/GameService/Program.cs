@@ -5,6 +5,7 @@ using GameService.Repositories;
 using GameService.Repositories.ForCategory;
 using GameService.Services;
 using MassTransit;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +50,15 @@ builder.Services.AddMassTransit(opt=>{
 
 });
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=>{
+    opt.Authority=builder.Configuration["AuthorirtyServiceUrl"];
+    opt.RequireHttpsMetadata=false;
+    opt.TokenValidationParameters.ValidateAudience=false;
+    opt.TokenValidationParameters.NameClaimType="username"; //tokeni olusturan kullanıocın kim olduguna dair mesaj
+    
+
+});
+
 
 var app = builder.Build();
 
@@ -60,7 +70,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
