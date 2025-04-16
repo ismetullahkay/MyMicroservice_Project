@@ -43,3 +43,11 @@ C:\MyMicroservice_Project\src\BasketService\obj\Debug\net7.0\refint\BasketServic
 C:\MyMicroservice_Project\src\BasketService\obj\Debug\net7.0\BasketService.pdb
 C:\MyMicroservice_Project\src\BasketService\obj\Debug\net7.0\BasketService.genruntimeconfig.cache
 C:\MyMicroservice_Project\src\BasketService\obj\Debug\net7.0\ref\BasketService.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\AutoMapper.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\MassTransit.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\MassTransit.Abstractions.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\RabbitMQ.Client.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\Contracts.dll
+C:\MyMicroservice_Project\src\BasketService\bin\Debug\net7.0\Contracts.pdb

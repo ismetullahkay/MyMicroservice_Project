@@ -12,5 +12,6 @@ public interface IBasketRepository{
 
     Task<ResponseModel<bool>> RemoveBasketItem(long index);
 
+    Task<ResponseModel<bool>> Checkout();   
     
 }

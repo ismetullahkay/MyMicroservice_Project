@@ -54,11 +54,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     opt.Authority=builder.Configuration["AuthorirtyServiceUrl"];
     opt.RequireHttpsMetadata=false;
     opt.TokenValidationParameters.ValidateAudience=false;
-    opt.TokenValidationParameters.NameClaimType="username"; //tokeni olusturan kullanıocın kim olduguna dair mesaj
-    
-
+    opt.TokenValidationParameters.NameClaimType="username"; //tokeni olusturan kullanıocın kim olduguna dair mesaj  
 });
 
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -74,5 +73,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGrpcService<GrpcGameService>();
 
 app.Run();

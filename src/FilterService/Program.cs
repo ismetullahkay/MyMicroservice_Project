@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddElastic(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IFilterGameService,FilterGameService>();
+
 builder.Services.AddMassTransit(opt=>{
     opt.AddConsumersFromNamespaceContaining<GameCreatedFilterConsumer>();
 
