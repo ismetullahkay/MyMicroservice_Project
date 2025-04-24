@@ -27,6 +27,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddGrpc();
     
 var app = builder.Build();
 
@@ -42,5 +43,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapGrpcService<GrpcDiscountService>();
 app.Run();

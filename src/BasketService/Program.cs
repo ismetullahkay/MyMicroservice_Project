@@ -1,4 +1,5 @@
 using BasketService.Repository;
+using DiscountService.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -28,6 +29,8 @@ builder.Services.AddMassTransit(opt=>
     
 
 });
+
+builder.Services.AddScoped<GrpcDiscountClient>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=>{
     opt.Authority=builder.Configuration["AuthorirtyServiceUrl"];

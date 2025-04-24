@@ -49,5 +49,12 @@ public class BasketController:ControllerBase
         var response=await _basketRepository.Checkout();
         return Ok(response);
     }
+    [HttpPut]
+    [Authorize] //userid alabilsin 
+    public async Task<ActionResult> CouponCodeImplement(long index,string couponCode)
+    {
+        var response=await _basketRepository.ImplementCoupon(index,couponCode);
+        return Ok(response);
+    }
 
 }
